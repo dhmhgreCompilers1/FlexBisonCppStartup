@@ -151,6 +151,13 @@
       <FileType>Document</FileType>
     </Bison>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="first.flex.cpp" />
+    <ClCompile Include="first.tab.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="first.tab.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="C:\FlexBison\custom_build_rules\win_flex_bison_custom_build.targets" />

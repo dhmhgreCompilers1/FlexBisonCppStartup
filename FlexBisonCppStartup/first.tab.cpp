@@ -62,9 +62,16 @@
 
 
 /* Copy the first part of user declarations.  */
+/* Line 371 of yacc.c  */
+#line 2 "first.y"
+
+#include <iostream>
+using namespace std;
+void yyerror(const char *message);
+extern int yylex();
 
 /* Line 371 of yacc.c  */
-#line 68 "first.tab.cpp"
+#line 75 "first.tab.cpp"
 
 # ifndef YY_NULL
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -124,7 +131,7 @@ int yyparse ();
 /* Copy the second part of user declarations.  */
 
 /* Line 390 of yacc.c  */
-#line 128 "first.tab.cpp"
+#line 135 "first.tab.cpp"
 
 #ifdef short
 # undef short
@@ -410,7 +417,7 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,     6,     6
+       0,    14,    14
 };
 #endif
 
@@ -1298,7 +1305,7 @@ yyreduce:
     {
       
 /* Line 1792 of yacc.c  */
-#line 1302 "first.tab.cpp"
+#line 1309 "first.tab.cpp"
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1530,8 +1537,10 @@ yyreturn:
 
 
 /* Line 2055 of yacc.c  */
-#line 9 "first.y"
+#line 17 "first.y"
 
-
+void yyerror(const char *message){
+	cout << message;
+}
 
 void main(){}

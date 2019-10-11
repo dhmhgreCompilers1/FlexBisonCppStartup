@@ -24,4 +24,17 @@
       <Filter>Grammar</Filter>
     </Bison>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="first.flex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="first.tab.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="first.tab.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>
