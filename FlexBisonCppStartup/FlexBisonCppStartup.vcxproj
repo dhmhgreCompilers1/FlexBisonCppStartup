@@ -157,6 +157,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="first.tab.h" />
+    <ClInclude Include="location.hh" />
+    <ClInclude Include="position.hh" />
+    <ClInclude Include="stack.hh" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

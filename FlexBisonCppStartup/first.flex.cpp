@@ -441,7 +441,14 @@ int yy_flex_debug = 0;
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
 #line 1 "first.l"
-#line 444 "first.flex.cpp"
+#line 5 "first.l"
+#include <iostream>
+#include <cstdlib>
+#include "first.tab.h"
+#define YY_DECL int yylex(yy::parser::semantic_type *yylval)
+
+#line 450 "first.flex.cpp"
+#line 451 "first.flex.cpp"
 
 #define INITIAL 0
 
@@ -655,11 +662,11 @@ YY_DECL
 		}
 
 	{
-#line 4 "first.l"
+#line 12 "first.l"
 
 
 
-#line 662 "first.flex.cpp"
+#line 669 "first.flex.cpp"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -718,10 +725,10 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 7 "first.l"
+#line 15 "first.l"
 ECHO;
 	YY_BREAK
-#line 724 "first.flex.cpp"
+#line 731 "first.flex.cpp"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1726,5 +1733,5 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 7 "first.l"
+#line 15 "first.l"
 
