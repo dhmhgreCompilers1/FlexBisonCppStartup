@@ -828,8 +828,10 @@ namespace yy {
 /* Line 1142 of lalr1.cc  */
 #line 20 "first.y"
 
-void yyerror(const char *message){
-	cout << message;
+namespace yy{
+	void parser::error(yy::location const &loc, const string &message){
+		std::cerr << "error at " << loc << ": " << message << std::endl;
+	}
 }
 
 void main(){}
