@@ -451,8 +451,9 @@ char *yytext;
 #include <cstdlib>
 #include "first.tab.h"
 #define YY_DECL int yylex(yy::parser::semantic_type *yylval)
-#line 454 "first.flex.cpp"
+typedef yy::parser::token token;
 #line 455 "first.flex.cpp"
+#line 456 "first.flex.cpp"
 
 #define INITIAL 0
 
@@ -666,9 +667,9 @@ YY_DECL
 		}
 
 	{
-#line 11 "first.l"
+#line 12 "first.l"
 
-#line 671 "first.flex.cpp"
+#line 672 "first.flex.cpp"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -727,31 +728,31 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 12 "first.l"
+#line 13 "first.l"
 {return '+';}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 13 "first.l"
+#line 14 "first.l"
 {return ';';}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 14 "first.l"
-{return yy::parser::token::yytokentype::NUMBER;}
+#line 15 "first.l"
+{return token::NUMBER;}
 	YY_BREAK
 case 4:
 /* rule 4 can match eol */
 YY_RULE_SETUP
-#line 16 "first.l"
+#line 17 "first.l"
 ;
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 18 "first.l"
+#line 19 "first.l"
 ECHO;
 	YY_BREAK
-#line 754 "first.flex.cpp"
+#line 755 "first.flex.cpp"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1756,5 +1757,5 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 18 "first.l"
+#line 19 "first.l"
 
