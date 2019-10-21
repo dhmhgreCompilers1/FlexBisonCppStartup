@@ -74,7 +74,7 @@ namespace yy {
     {
       /* Tokens.  */
    enum yytokentype {
-
+     NUMBER = 258
    };
 
     };
@@ -179,7 +179,7 @@ namespace yy {
     static const unsigned char yytable_[];
     static const signed char yytable_ninf_;
 
-    static const unsigned char yycheck_[];
+    static const signed char yycheck_[];
 
     /// For a state, its accessing symbol.
     static const unsigned char yystos_[];

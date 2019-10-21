@@ -10,10 +10,23 @@ extern int yylex(yy::parser::semantic_type *yylval);
 
 
 %start compileunit
-
+%token NUMBER
 %%
 
-compileunit:;
+compileunit: statements
+			;
+
+statements : statement
+		   | statements statement
+		   ;
+
+statement : expression ';'
+		  | ';'
+		  ;
+
+expression : NUMBER
+		 | expression '+' expression
+		 ;
 
 
 %%

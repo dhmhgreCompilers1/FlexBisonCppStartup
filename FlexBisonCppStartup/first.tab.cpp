@@ -38,11 +38,10 @@
 #include <iostream>
 #include "first.tab.h"
 using namespace std;
-void yyerror(const char *message);
 extern int yylex(yy::parser::semantic_type *yylval);
 
 /* Line 279 of lalr1.cc  */
-#line 46 "first.tab.cpp"
+#line 45 "first.tab.cpp"
 
 
 #include "first.tab.h"
@@ -50,7 +49,7 @@ extern int yylex(yy::parser::semantic_type *yylval);
 /* User implementation prologue.  */
 
 /* Line 285 of lalr1.cc  */
-#line 54 "first.tab.cpp"
+#line 53 "first.tab.cpp"
 
 
 # ifndef YY_NULL
@@ -145,7 +144,7 @@ do {					\
 
 namespace yy {
 /* Line 353 of lalr1.cc  */
-#line 149 "first.tab.cpp"
+#line 148 "first.tab.cpp"
 
   /// Build a parser object.
   parser::parser ()
@@ -416,7 +415,7 @@ namespace yy {
       {
         
 /* Line 670 of lalr1.cc  */
-#line 420 "first.tab.cpp"
+#line 419 "first.tab.cpp"
       default:
         break;
       }
@@ -628,11 +627,12 @@ namespace yy {
 
   /* YYPACT[STATE-NUM] -- Index in YYTABLE of the portion describing
      STATE-NUM.  */
-  const signed char parser::yypact_ninf_ = -1;
+  const signed char parser::yypact_ninf_ = -4;
   const signed char
   parser::yypact_[] =
   {
-        -1,     0,    -1
+        -3,    -4,    -4,     4,    -3,    -4,    -2,    -4,    -4,    -4,
+       2,     1
   };
 
   /* YYDEFACT[S] -- default reduction number in state S.  Performed when
@@ -641,21 +641,22 @@ namespace yy {
   const unsigned char
   parser::yydefact_[] =
   {
-         2,     0,     1
+         0,     7,     6,     0,     2,     3,     0,     1,     4,     5,
+       0,     8
   };
 
   /* YYPGOTO[NTERM-NUM].  */
   const signed char
   parser::yypgoto_[] =
   {
-        -1,    -1
+        -4,    -4,    -4,     3,    -1
   };
 
   /* YYDEFGOTO[NTERM-NUM].  */
   const signed char
   parser::yydefgoto_[] =
   {
-        -1,     1
+        -1,     3,     4,     5,     6
   };
 
   /* YYTABLE[YYPACT[STATE-NUM]].  What to do in state STATE-NUM.  If
@@ -665,14 +666,14 @@ namespace yy {
   const unsigned char
   parser::yytable_[] =
   {
-         2
+         1,     2,     9,    10,     7,     1,    10,     8,     0,    11
   };
 
   /* YYCHECK.  */
-  const unsigned char
+  const signed char
   parser::yycheck_[] =
   {
-         0
+         3,     4,     4,     5,     0,     3,     5,     4,    -1,    10
   };
 
   /* STOS_[STATE-NUM] -- The (internal number of the) accessing
@@ -680,7 +681,8 @@ namespace yy {
   const unsigned char
   parser::yystos_[] =
   {
-         0,     4,     0
+         0,     3,     4,     7,     8,     9,    10,     0,     9,     4,
+       5,    10
   };
 
 #if YYDEBUG
@@ -689,7 +691,7 @@ namespace yy {
   const unsigned short int
   parser::yytoken_number_[] =
   {
-         0,   256,   257
+         0,   256,   257,   258,    59,    43
   };
 #endif
 
@@ -697,14 +699,14 @@ namespace yy {
   const unsigned char
   parser::yyr1_[] =
   {
-         0,     3,     4
+         0,     6,     7,     8,     8,     9,     9,    10,    10
   };
 
   /* YYR2[YYN] -- Number of symbols composing right hand side of rule YYN.  */
   const unsigned char
   parser::yyr2_[] =
   {
-         0,     2,     0
+         0,     2,     1,     1,     2,     2,     1,     1,     3
   };
 
 #if YYDEBUG
@@ -713,7 +715,8 @@ namespace yy {
   const char*
   const parser::yytname_[] =
   {
-    "$end", "error", "$undefined", "$accept", "compileunit", YY_NULL
+    "$end", "error", "$undefined", "NUMBER", "';'", "'+'", "$accept",
+  "compileunit", "statements", "statement", "expression", YY_NULL
   };
 
 
@@ -721,7 +724,9 @@ namespace yy {
   const parser::rhs_number_type
   parser::yyrhs_[] =
   {
-         4,     0,    -1,    -1
+         7,     0,    -1,     8,    -1,     9,    -1,     8,     9,    -1,
+      10,     4,    -1,     4,    -1,     3,    -1,    10,     5,    10,
+      -1
   };
 
   /* YYPRHS[YYN] -- Index of the first RHS symbol of rule number YYN in
@@ -729,14 +734,14 @@ namespace yy {
   const unsigned char
   parser::yyprhs_[] =
   {
-         0,     0,     3
+         0,     0,     3,     5,     7,    10,    13,    15,    17
   };
 
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
   const unsigned char
   parser::yyrline_[] =
   {
-         0,    17,    17
+         0,    16,    16,    19,    20,    23,    24,    27,    28
   };
 
   // Print the state stack on the debug stream.
@@ -780,6 +785,8 @@ namespace yy {
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     5,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     4,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
@@ -799,9 +806,7 @@ namespace yy {
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     1,     2
+       2,     2,     2,     2,     2,     2,     1,     2,     3
     };
     if ((unsigned int) t <= yyuser_token_number_max_)
       return translate_table[t];
@@ -810,23 +815,23 @@ namespace yy {
   }
 
   const int parser::yyeof_ = 0;
-  const int parser::yylast_ = 0;
-  const int parser::yynnts_ = 2;
+  const int parser::yylast_ = 9;
+  const int parser::yynnts_ = 5;
   const int parser::yyempty_ = -2;
-  const int parser::yyfinal_ = 2;
+  const int parser::yyfinal_ = 7;
   const int parser::yyterror_ = 1;
   const int parser::yyerrcode_ = 256;
-  const int parser::yyntokens_ = 3;
+  const int parser::yyntokens_ = 6;
 
-  const unsigned int parser::yyuser_token_number_max_ = 257;
+  const unsigned int parser::yyuser_token_number_max_ = 258;
   const parser::token_number_type parser::yyundef_token_ = 2;
 
 
 } // yy
 /* Line 1141 of lalr1.cc  */
-#line 828 "first.tab.cpp"
+#line 833 "first.tab.cpp"
 /* Line 1142 of lalr1.cc  */
-#line 20 "first.y"
+#line 32 "first.y"
 
 namespace yy{
 	void parser::error(yy::location const &loc, const string &message){
