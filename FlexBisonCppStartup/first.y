@@ -8,7 +8,7 @@ using namespace std;
 extern int yylex(yy::parser::semantic_type *yylval);
 extern FILE *yyin;
 %}
-
+%error-verbose
 
 %start compileunit
 %token NUMBER

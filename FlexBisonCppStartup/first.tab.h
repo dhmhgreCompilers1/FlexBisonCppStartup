@@ -189,10 +189,13 @@ namespace yy {
     /// For a rule, its RHS length.
     static const unsigned char yyr2_[]; 
 
-#if YYDEBUG
+    /// Convert the symbol name \a n to a form suitable for a diagnostic.
+    static std::string yytnamerr_ (const char *n);
+
+
     /// For a symbol, its name in clear.
     static const char* const yytname_[];
-
+#if YYDEBUG
     /// A type to store symbol numbers and -1.
     typedef signed char rhs_number_type;
     /// A `-1'-separated list of the rules' RHS.
@@ -247,7 +250,7 @@ namespace yy {
 
 } // yy
 /* Line 33 of lalr1.cc  */
-#line 251 "first.tab.h"
+#line 254 "first.tab.h"
 
 
 
