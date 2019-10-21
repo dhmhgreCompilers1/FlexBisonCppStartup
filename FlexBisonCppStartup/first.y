@@ -6,6 +6,7 @@
 #include "first.tab.h"
 using namespace std;
 extern int yylex(yy::parser::semantic_type *yylval);
+extern FILE *yyin;
 %}
 
 
@@ -37,4 +38,11 @@ namespace yy{
 	}
 }
 
-void main(){}
+void main(int argc, char **argv){
+
+	fopen_s(&yyin,"test.txt","r");
+	yy::parser *p = new yy::parser();
+	p->parse();
+
+
+}

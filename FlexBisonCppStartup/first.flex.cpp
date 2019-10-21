@@ -451,7 +451,7 @@ char *yytext;
 #include <cstdlib>
 #include "first.tab.h"
 #define YY_DECL int yylex(yy::parser::semantic_type *yylval)
-
+using namespace std;
 #line 455 "first.flex.cpp"
 #line 456 "first.flex.cpp"
 
@@ -669,8 +669,10 @@ YY_DECL
 	{
 #line 12 "first.l"
 
+#line 14 "first.l"
+ {cout << "Hello World!!!";}
 
-#line 673 "first.flex.cpp"
+#line 675 "first.flex.cpp"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -729,25 +731,25 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 14 "first.l"
+#line 16 "first.l"
 {return '+';}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 15 "first.l"
+#line 17 "first.l"
 {return ';';}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 16 "first.l"
+#line 18 "first.l"
 {return yy::parser::token::yytokentype::NUMBER;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 19 "first.l"
+#line 21 "first.l"
 ECHO;
 	YY_BREAK
-#line 750 "first.flex.cpp"
+#line 752 "first.flex.cpp"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1752,5 +1754,5 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 19 "first.l"
+#line 21 "first.l"
 

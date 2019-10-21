@@ -39,9 +39,10 @@
 #include "first.tab.h"
 using namespace std;
 extern int yylex(yy::parser::semantic_type *yylval);
+extern FILE *yyin;
 
 /* Line 279 of lalr1.cc  */
-#line 45 "first.tab.cpp"
+#line 46 "first.tab.cpp"
 
 
 #include "first.tab.h"
@@ -49,7 +50,7 @@ extern int yylex(yy::parser::semantic_type *yylval);
 /* User implementation prologue.  */
 
 /* Line 285 of lalr1.cc  */
-#line 53 "first.tab.cpp"
+#line 54 "first.tab.cpp"
 
 
 # ifndef YY_NULL
@@ -144,7 +145,7 @@ do {					\
 
 namespace yy {
 /* Line 353 of lalr1.cc  */
-#line 148 "first.tab.cpp"
+#line 149 "first.tab.cpp"
 
   /// Build a parser object.
   parser::parser ()
@@ -415,7 +416,7 @@ namespace yy {
       {
         
 /* Line 670 of lalr1.cc  */
-#line 419 "first.tab.cpp"
+#line 420 "first.tab.cpp"
       default:
         break;
       }
@@ -741,7 +742,7 @@ namespace yy {
   const unsigned char
   parser::yyrline_[] =
   {
-         0,    17,    17,    20,    21,    24,    25,    28,    29
+         0,    18,    18,    21,    22,    25,    26,    29,    30
   };
 
   // Print the state stack on the debug stream.
@@ -829,9 +830,9 @@ namespace yy {
 
 } // yy
 /* Line 1141 of lalr1.cc  */
-#line 833 "first.tab.cpp"
+#line 834 "first.tab.cpp"
 /* Line 1142 of lalr1.cc  */
-#line 33 "first.y"
+#line 34 "first.y"
 
 namespace yy{
 	void parser::error(yy::location const &loc, const string &message){
@@ -839,4 +840,11 @@ namespace yy{
 	}
 }
 
-void main(){}
+void main(int argc, char **argv){
+
+	fopen_s(&yyin,"test.txt","r");
+	yy::parser *p = new yy::parser();
+	p->parse();
+
+
+}
