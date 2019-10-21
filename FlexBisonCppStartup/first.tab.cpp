@@ -631,8 +631,8 @@ namespace yy {
   const signed char
   parser::yypact_[] =
   {
-        -3,    -4,    -4,     4,    -3,    -4,    -2,    -4,    -4,    -4,
-       2,     1
+        -3,    -4,    -4,     1,    -3,    -4,    -1,    -4,    -4,     2,
+      -4,    -4
   };
 
   /* YYDEFACT[S] -- default reduction number in state S.  Performed when
@@ -641,15 +641,15 @@ namespace yy {
   const unsigned char
   parser::yydefact_[] =
   {
-         0,     7,     6,     0,     2,     3,     0,     1,     4,     5,
-       0,     8
+         0,     7,     6,     0,     2,     3,     0,     1,     4,     0,
+       5,     8
   };
 
   /* YYPGOTO[NTERM-NUM].  */
   const signed char
   parser::yypgoto_[] =
   {
-        -4,    -4,    -4,     3,    -1
+        -4,    -4,    -4,     3,     0
   };
 
   /* YYDEFGOTO[NTERM-NUM].  */
@@ -666,14 +666,14 @@ namespace yy {
   const unsigned char
   parser::yytable_[] =
   {
-         1,     2,     9,    10,     7,     1,    10,     8,     0,    11
+         1,     7,     2,     9,    10,     1,     0,     8,     0,    11
   };
 
   /* YYCHECK.  */
   const signed char
   parser::yycheck_[] =
   {
-         3,     4,     4,     5,     0,     3,     5,     4,    -1,    10
+         3,     0,     5,     4,     5,     3,    -1,     4,    -1,     9
   };
 
   /* STOS_[STATE-NUM] -- The (internal number of the) accessing
@@ -681,7 +681,7 @@ namespace yy {
   const unsigned char
   parser::yystos_[] =
   {
-         0,     3,     4,     7,     8,     9,    10,     0,     9,     4,
+         0,     3,     5,     7,     8,     9,    10,     0,     9,     4,
        5,    10
   };
 
@@ -691,7 +691,7 @@ namespace yy {
   const unsigned short int
   parser::yytoken_number_[] =
   {
-         0,   256,   257,   258,    59,    43
+         0,   256,   257,   258,    43,    59
   };
 #endif
 
@@ -715,7 +715,7 @@ namespace yy {
   const char*
   const parser::yytname_[] =
   {
-    "$end", "error", "$undefined", "NUMBER", "';'", "'+'", "$accept",
+    "$end", "error", "$undefined", "NUMBER", "'+'", "';'", "$accept",
   "compileunit", "statements", "statement", "expression", YY_NULL
   };
 
@@ -725,7 +725,7 @@ namespace yy {
   parser::yyrhs_[] =
   {
          7,     0,    -1,     8,    -1,     9,    -1,     8,     9,    -1,
-      10,     4,    -1,     4,    -1,     3,    -1,    10,     5,    10,
+      10,     5,    -1,     5,    -1,     3,    -1,    10,     4,    10,
       -1
   };
 
@@ -741,7 +741,7 @@ namespace yy {
   const unsigned char
   parser::yyrline_[] =
   {
-         0,    16,    16,    19,    20,    23,    24,    27,    28
+         0,    17,    17,    20,    21,    24,    25,    28,    29
   };
 
   // Print the state stack on the debug stream.
@@ -785,8 +785,8 @@ namespace yy {
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     5,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     4,
+       2,     2,     2,     4,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     5,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
@@ -831,7 +831,7 @@ namespace yy {
 /* Line 1141 of lalr1.cc  */
 #line 833 "first.tab.cpp"
 /* Line 1142 of lalr1.cc  */
-#line 32 "first.y"
+#line 33 "first.y"
 
 namespace yy{
 	void parser::error(yy::location const &loc, const string &message){

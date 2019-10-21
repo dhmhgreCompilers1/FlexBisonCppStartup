@@ -11,6 +11,7 @@ extern int yylex(yy::parser::semantic_type *yylval);
 
 %start compileunit
 %token NUMBER
+%left '+'
 %%
 
 compileunit: statements
