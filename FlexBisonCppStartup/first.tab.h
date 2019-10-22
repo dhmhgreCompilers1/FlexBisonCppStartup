@@ -40,6 +40,15 @@
 #ifndef YY_YY_FIRST_TAB_H_INCLUDED
 # define YY_YY_FIRST_TAB_H_INCLUDED
 
+/* "%code requires" blocks.  */
+/* Line 33 of lalr1.cc  */
+#line 14 "first.y"
+ 
+	#include "Composite.h"
+
+
+/* Line 33 of lalr1.cc  */
+#line 52 "first.tab.h"
 
 
 #include <string>
@@ -55,7 +64,7 @@
 
 namespace yy {
 /* Line 33 of lalr1.cc  */
-#line 59 "first.tab.h"
+#line 68 "first.tab.h"
 
   /// A Bison parser.
   class parser
@@ -63,7 +72,17 @@ namespace yy {
   public:
     /// Symbol semantic values.
 #ifndef YYSTYPE
-    typedef int semantic_type;
+    union semantic_type
+    {
+/* Line 33 of lalr1.cc  */
+#line 18 "first.y"
+
+	 CSTNode *node;
+
+
+/* Line 33 of lalr1.cc  */
+#line 85 "first.tab.h"
+    };
 #else
     typedef YYSTYPE semantic_type;
 #endif
@@ -250,7 +269,7 @@ namespace yy {
 
 } // yy
 /* Line 33 of lalr1.cc  */
-#line 254 "first.tab.h"
+#line 273 "first.tab.h"
 
 
 

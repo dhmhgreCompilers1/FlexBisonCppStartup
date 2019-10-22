@@ -31,6 +31,9 @@
     <ClCompile Include="first.tab.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Composite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="first.tab.h">
@@ -43,6 +46,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="stack.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Composite.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

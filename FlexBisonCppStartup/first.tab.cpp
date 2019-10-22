@@ -37,12 +37,13 @@
 
 #include <iostream>
 #include "first.tab.h"
+
 using namespace std;
 extern int yylex(yy::parser::semantic_type *yylval);
 extern FILE *yyin;
 
 /* Line 279 of lalr1.cc  */
-#line 46 "first.tab.cpp"
+#line 47 "first.tab.cpp"
 
 
 #include "first.tab.h"
@@ -50,7 +51,7 @@ extern FILE *yyin;
 /* User implementation prologue.  */
 
 /* Line 285 of lalr1.cc  */
-#line 54 "first.tab.cpp"
+#line 55 "first.tab.cpp"
 
 
 # ifndef YY_NULL
@@ -145,7 +146,7 @@ do {					\
 
 namespace yy {
 /* Line 353 of lalr1.cc  */
-#line 149 "first.tab.cpp"
+#line 150 "first.tab.cpp"
 
   /* Return YYSTR after stripping away unnecessary quotes and
      backslashes, so that it's suitable for yyerror.  The heuristic is
@@ -452,9 +453,51 @@ namespace yy {
     YY_REDUCE_PRINT (yyn);
     switch (yyn)
       {
-        
+          case 2:
 /* Line 670 of lalr1.cc  */
-#line 458 "first.tab.cpp"
+#line 28 "first.y"
+    { g_root= (yyval.node) = new CSTNode(COMPILEUNIT,1,(yysemantic_stack_[(1) - (1)].node));}
+    break;
+
+  case 3:
+/* Line 670 of lalr1.cc  */
+#line 31 "first.y"
+    { (yyval.node) = new CSTNode(STATEMENTS,1,(yysemantic_stack_[(1) - (1)].node)); }
+    break;
+
+  case 4:
+/* Line 670 of lalr1.cc  */
+#line 32 "first.y"
+    { (yyval.node) = new CSTNode(STATEMENTS,2,(yysemantic_stack_[(2) - (1)].node),(yysemantic_stack_[(2) - (2)].node)); }
+    break;
+
+  case 5:
+/* Line 670 of lalr1.cc  */
+#line 35 "first.y"
+    { (yyval.node) = new CSTNode(STATEMENT,1,(yysemantic_stack_[(2) - (1)].node)); }
+    break;
+
+  case 6:
+/* Line 670 of lalr1.cc  */
+#line 36 "first.y"
+    { (yyval.node) = new CSTNode(STATEMENT,0); }
+    break;
+
+  case 7:
+/* Line 670 of lalr1.cc  */
+#line 39 "first.y"
+    { (yyval.node) = (yysemantic_stack_[(1) - (1)].node); }
+    break;
+
+  case 8:
+/* Line 670 of lalr1.cc  */
+#line 40 "first.y"
+    { (yyval.node) = new CSTNode(STATEMENTS,2,(yysemantic_stack_[(3) - (1)].node),(yysemantic_stack_[(3) - (3)].node)); }
+    break;
+
+
+/* Line 670 of lalr1.cc  */
+#line 501 "first.tab.cpp"
       default:
         break;
       }
@@ -868,7 +911,7 @@ namespace yy {
   const unsigned char
   parser::yyrline_[] =
   {
-         0,    18,    18,    21,    22,    25,    26,    29,    30
+         0,    28,    28,    31,    32,    35,    36,    39,    40
   };
 
   // Print the state stack on the debug stream.
@@ -956,9 +999,9 @@ namespace yy {
 
 } // yy
 /* Line 1141 of lalr1.cc  */
-#line 960 "first.tab.cpp"
+#line 1003 "first.tab.cpp"
 /* Line 1142 of lalr1.cc  */
-#line 34 "first.y"
+#line 44 "first.y"
 
 namespace yy{
 	void parser::error(yy::location const &loc, const string &message){

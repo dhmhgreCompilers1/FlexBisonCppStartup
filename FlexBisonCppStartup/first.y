@@ -4,30 +4,40 @@
 %{
 #include <iostream>
 #include "first.tab.h"
+
 using namespace std;
 extern int yylex(yy::parser::semantic_type *yylval);
 extern FILE *yyin;
 %}
 %error-verbose
 
+%code requires { 
+	#include "Composite.h"
+}
+
+%union {
+	 CSTNode *node;
+};
+
 %start compileunit
-%token NUMBER
+%token <node> NUMBER
 %left '+'
+%type <node> compileunit statements statement expression
 %%
 
-compileunit: statements
+compileunit: statements { g_root= $$ = new CSTNode(COMPILEUNIT,1,$1);}
 			;
 
-statements : statement
-		   | statements statement
+statements : statement				{ $$ = new CSTNode(STATEMENTS,1,$1); }
+		   | statements statement	{ $$ = new CSTNode(STATEMENTS,2,$1,$2); }
 		   ;
 
-statement : expression ';'
-		  | ';'
+statement : expression ';'	{ $$ = new CSTNode(STATEMENT,1,$1); }
+		  | ';'				{ $$ = new CSTNode(STATEMENT,0); }
 		  ;
 
-expression : NUMBER
-		 | expression '+' expression
+expression : NUMBER					   { $$ = $1; }
+		   | expression '+' expression { $$ = new CSTNode(STATEMENTS,2,$1,$3); }
 		 ;
 
 

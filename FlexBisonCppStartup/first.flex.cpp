@@ -739,20 +739,21 @@ YY_RULE_SETUP
 case 3:
 YY_RULE_SETUP
 #line 15 "first.l"
-{return token::NUMBER;}
+{ yylval->node = new CSTNode(EXPRESSION_NUMBER,0);
+				return token::NUMBER;}
 	YY_BREAK
 case 4:
 /* rule 4 can match eol */
 YY_RULE_SETUP
-#line 17 "first.l"
+#line 18 "first.l"
 ;
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 19 "first.l"
+#line 20 "first.l"
 ECHO;
 	YY_BREAK
-#line 755 "first.flex.cpp"
+#line 756 "first.flex.cpp"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1757,5 +1758,5 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 19 "first.l"
+#line 20 "first.l"
 
