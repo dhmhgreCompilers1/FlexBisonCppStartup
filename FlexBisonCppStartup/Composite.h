@@ -29,7 +29,7 @@ private:
 	// A counter counting the nodes created for giving a
 	// unique serial counter
 	static int ms_serialCounter;
-	list<CSTNode> *m_children;
+	list<CSTNode *> *m_children;
 };
 
 

@@ -12,10 +12,10 @@ CSTNode::CSTNode(NodeType type,int num,...) :m_nodeType{ type } {
 	
 	m_serial = ms_serialCounter++;
 	m_graphvizLabel = g_nodeTypeLabels[m_nodeType];
-	m_children = new list<CSTNode>();
+	m_children = new list<CSTNode *>();
 
 	for ( int i = 0; i<num;i++)	{
-		m_children->push_back(va_arg(argumentList, CSTNode));
+		m_children->push_back(va_arg(argumentList, CSTNode *));
 	}
 	
 	va_end(argumentList);
