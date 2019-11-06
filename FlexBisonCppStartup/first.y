@@ -13,6 +13,7 @@ extern FILE *yyin;
 
 %code requires { 
 	#include "Composite.h"
+	#include "CompositeConcrete.h"
 }
 
 %union {
@@ -25,19 +26,19 @@ extern FILE *yyin;
 %type <node> compileunit statements statement expression
 %%
 
-compileunit: statements { g_root= $$ = new CSTNode(COMPILEUNIT,1,$1);}
+compileunit: statements { g_root= $$ = new CCompileUnit((CStatements *)$1);}
 			;
 
-statements : statement				{ $$ = new CSTNode(STATEMENTS,1,$1); }
-		   | statements statement	{ $$ = new CSTNode(STATEMENTS,2,$1,$2); }
+statements : statement				{ $$ = new CStatements((CStatement *)$1); }
+		   | statements statement	{ $$ = new CStatements((CStatements *)$1,(CStatement *)$2); }
 		   ;
 
-statement : expression ';'	{ $$ = new CSTNode(STATEMENT,1,$1); }
-		  | ';'				{ $$ = new CSTNode(STATEMENT,0); }
+statement : expression ';'	{ $$ = new CStatement((CExpression *)$1); }
+		  | ';'				{ $$ = new CStatement(); }
 		  ;
 
 expression : NUMBER					   { $$ = $1; }
-		   | expression '+' expression { $$ = new CSTNode(STATEMENTS,2,$1,$3); }
+		   | expression '+' expression { $$ = new CExpression((CExpression *)$1,(CExpression *)$3); }
 		 ;
 
 
@@ -49,10 +50,11 @@ namespace yy{
 }
 
 void main(int argc, char **argv){
-
+	CSTNode *root;
 	fopen_s(&yyin,"test.txt","r");
 	yy::parser *p = new yy::parser();
 	p->parse();
-
+	root = g_root;
+	cout <<"Finished!!!";
 
 }

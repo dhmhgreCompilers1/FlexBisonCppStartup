@@ -45,10 +45,11 @@
 #line 14 "first.y"
  
 	#include "Composite.h"
+	#include "CompositeConcrete.h"
 
 
 /* Line 33 of lalr1.cc  */
-#line 52 "first.tab.h"
+#line 53 "first.tab.h"
 
 
 #include <string>
@@ -64,7 +65,7 @@
 
 namespace yy {
 /* Line 33 of lalr1.cc  */
-#line 68 "first.tab.h"
+#line 69 "first.tab.h"
 
   /// A Bison parser.
   class parser
@@ -75,13 +76,13 @@ namespace yy {
     union semantic_type
     {
 /* Line 33 of lalr1.cc  */
-#line 18 "first.y"
+#line 19 "first.y"
 
 	 CSTNode *node;
 
 
 /* Line 33 of lalr1.cc  */
-#line 85 "first.tab.h"
+#line 86 "first.tab.h"
     };
 #else
     typedef YYSTYPE semantic_type;
@@ -269,7 +270,7 @@ namespace yy {
 
 } // yy
 /* Line 33 of lalr1.cc  */
-#line 273 "first.tab.h"
+#line 274 "first.tab.h"
 
 
 

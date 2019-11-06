@@ -455,44 +455,44 @@ namespace yy {
       {
           case 2:
 /* Line 670 of lalr1.cc  */
-#line 28 "first.y"
-    { g_root= (yyval.node) = new CSTNode(COMPILEUNIT,1,(yysemantic_stack_[(1) - (1)].node));}
+#line 29 "first.y"
+    { g_root= (yyval.node) = new CCompileUnit((CStatements *)(yysemantic_stack_[(1) - (1)].node));}
     break;
 
   case 3:
 /* Line 670 of lalr1.cc  */
-#line 31 "first.y"
-    { (yyval.node) = new CSTNode(STATEMENTS,1,(yysemantic_stack_[(1) - (1)].node)); }
+#line 32 "first.y"
+    { (yyval.node) = new CStatements((CStatement *)(yysemantic_stack_[(1) - (1)].node)); }
     break;
 
   case 4:
 /* Line 670 of lalr1.cc  */
-#line 32 "first.y"
-    { (yyval.node) = new CSTNode(STATEMENTS,2,(yysemantic_stack_[(2) - (1)].node),(yysemantic_stack_[(2) - (2)].node)); }
+#line 33 "first.y"
+    { (yyval.node) = new CStatements((CStatements *)(yysemantic_stack_[(2) - (1)].node),(CStatement *)(yysemantic_stack_[(2) - (2)].node)); }
     break;
 
   case 5:
 /* Line 670 of lalr1.cc  */
-#line 35 "first.y"
-    { (yyval.node) = new CSTNode(STATEMENT,1,(yysemantic_stack_[(2) - (1)].node)); }
+#line 36 "first.y"
+    { (yyval.node) = new CStatement((CExpression *)(yysemantic_stack_[(2) - (1)].node)); }
     break;
 
   case 6:
 /* Line 670 of lalr1.cc  */
-#line 36 "first.y"
-    { (yyval.node) = new CSTNode(STATEMENT,0); }
+#line 37 "first.y"
+    { (yyval.node) = new CStatement(); }
     break;
 
   case 7:
 /* Line 670 of lalr1.cc  */
-#line 39 "first.y"
+#line 40 "first.y"
     { (yyval.node) = (yysemantic_stack_[(1) - (1)].node); }
     break;
 
   case 8:
 /* Line 670 of lalr1.cc  */
-#line 40 "first.y"
-    { (yyval.node) = new CSTNode(STATEMENTS,2,(yysemantic_stack_[(3) - (1)].node),(yysemantic_stack_[(3) - (3)].node)); }
+#line 41 "first.y"
+    { (yyval.node) = new CExpression((CExpression *)(yysemantic_stack_[(3) - (1)].node),(CExpression *)(yysemantic_stack_[(3) - (3)].node)); }
     break;
 
 
@@ -911,7 +911,7 @@ namespace yy {
   const unsigned char
   parser::yyrline_[] =
   {
-         0,    28,    28,    31,    32,    35,    36,    39,    40
+         0,    29,    29,    32,    33,    36,    37,    40,    41
   };
 
   // Print the state stack on the debug stream.
@@ -1001,7 +1001,7 @@ namespace yy {
 /* Line 1141 of lalr1.cc  */
 #line 1003 "first.tab.cpp"
 /* Line 1142 of lalr1.cc  */
-#line 44 "first.y"
+#line 45 "first.y"
 
 namespace yy{
 	void parser::error(yy::location const &loc, const string &message){
@@ -1010,10 +1010,11 @@ namespace yy{
 }
 
 void main(int argc, char **argv){
-
+	CSTNode *root;
 	fopen_s(&yyin,"test.txt","r");
 	yy::parser *p = new yy::parser();
 	p->parse();
-
+	root = g_root;
+	cout <<"Finished!!!";
 
 }

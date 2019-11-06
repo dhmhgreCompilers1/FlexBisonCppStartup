@@ -15,10 +15,11 @@ typedef enum nodeType{
 class CSTNode{
 public:
 	CSTNode(NodeType,int,...);
+	virtual ~CSTNode();	
 
+	//  ********* QUERY METHODS **************
 	NodeType GetNodeType();
-	string GetGraphVizLabel();
-	
+	string GetGraphVizLabel();	
 
 private:
 	// Type of node

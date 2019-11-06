@@ -153,11 +153,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Composite.cpp" />
+    <ClCompile Include="CompositeConcrete.cpp" />
     <ClCompile Include="first.flex.cpp" />
     <ClCompile Include="first.tab.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Composite.h" />
+    <ClInclude Include="CompositeConcrete.h" />
     <ClInclude Include="first.tab.h" />
     <ClInclude Include="location.hh" />
     <ClInclude Include="position.hh" />
