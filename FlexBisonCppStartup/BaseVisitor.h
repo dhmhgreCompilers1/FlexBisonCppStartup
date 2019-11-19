@@ -11,6 +11,11 @@ template <typename T>
 class Result {
 public:
 	T m_value;
+
+private:
+	Result():m_value{}{}
+public:
+	Result(T value):m_value{value} {}
 	
 	operator T() {
 		return m_value;
