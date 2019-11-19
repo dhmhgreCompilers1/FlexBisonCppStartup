@@ -103,6 +103,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -152,12 +153,14 @@
     </Bison>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BaseVisitor.cpp" />
     <ClCompile Include="Composite.cpp" />
     <ClCompile Include="CompositeConcrete.cpp" />
     <ClCompile Include="first.flex.cpp" />
     <ClCompile Include="first.tab.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BaseVisitor.h" />
     <ClInclude Include="Composite.h" />
     <ClInclude Include="CompositeConcrete.h" />
     <ClInclude Include="first.tab.h" />

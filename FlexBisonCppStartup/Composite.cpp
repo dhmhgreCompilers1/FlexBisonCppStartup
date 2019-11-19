@@ -17,7 +17,6 @@ CSTNode::CSTNode(NodeType type, int num, ...) :m_nodeType{ type } {
 	for (int i = 0; i < num; i++) {
 		m_children->push_back(va_arg(argumentList, CSTNode*));
 	}
-
 	va_end(argumentList);
 }
 
@@ -37,4 +36,16 @@ string CSTNode::GetGraphVizLabel() {
 	return m_graphvizLabel;
 }
 
-
+void CSTNode::PrintTree(ofstream *outfile,CSTNode* current, CSTNode* parent) {
+	list<CSTNode*>::iterator it;
+	
+	// PREORDER ACTIONS
+	*outfile << "\"" << parent->m_graphvizLabel << "\"" << "->" << "\"" << current->m_graphvizLabel << "\";" <<std::endl;
+	
+	// VISIT 
+	for ( it = m_children->begin(); it !=m_children->end(); it++ ) {
+		PrintTree(outfile, *it, this);
+	}
+	
+	// POSTORDER ACTIONS
+}

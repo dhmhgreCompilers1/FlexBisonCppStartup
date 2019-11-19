@@ -1010,11 +1010,12 @@ namespace yy{
 }
 
 void main(int argc, char **argv){
-	CSTNode *root;
+	ofstream *outFile = new ofstream();
 	fopen_s(&yyin,"test.txt","r");
 	yy::parser *p = new yy::parser();
 	p->parse();
-	root = g_root;
+	
+
 	cout <<"Finished!!!";
 
 }

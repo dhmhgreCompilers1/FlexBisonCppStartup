@@ -9,13 +9,14 @@ class CExpression;
 class CNUMBER;
 
 // Concrete Node Classes
-
-
 class CCompileUnit : public CSTNode {
 public:
 
 	CCompileUnit(CStatements* stats);
 	virtual ~CCompileUnit();
+
+	void PrintTree(ofstream* outfile, CSTNode* current, CSTNode* parent) override;
+	virtual Y Accept(BaseVisitor* visitor);
 private:	
 };
 
@@ -25,6 +26,8 @@ public:
 	CStatements(CStatement* stat);
 	CStatements(CStatements* stats, CStatement* stat);
 	virtual ~CStatements();
+	void PrintTree(ofstream* outfile, CSTNode* current, CSTNode* parent) override;
+	virtual Y Accept(BaseVisitor* visitor) override;
 private:
 };
 
@@ -34,6 +37,8 @@ public:
 	CStatement();
 	CStatement(CExpression* expr);	
 	virtual ~CStatement();
+	void PrintTree(ofstream* outfile, CSTNode* current, CSTNode* parent) override;
+	virtual Y Accept(BaseVisitor* visitor) override;
 private:
 };
 
@@ -43,6 +48,8 @@ public:
 	CExpression(CNUMBER *num);
 	CExpression(CExpression* exprl,CExpression*exprr);
 	virtual ~CExpression();
+	void PrintTree(ofstream* outfile, CSTNode* current, CSTNode* parent) override;
+	virtual Y Accept(BaseVisitor* visitor) override;
 private:
 };
 
@@ -55,6 +62,8 @@ public :
 	CNUMBER(char *text,int val);
 	CNUMBER(char* text, double val);
 	virtual ~CNUMBER();
+	void PrintTree(ofstream* outfile, CSTNode* current, CSTNode* parent) override;
+	virtual Y Accept(BaseVisitor* visitor) override;
 };
 
 

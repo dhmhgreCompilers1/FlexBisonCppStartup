@@ -2,11 +2,13 @@
 #define COMPOSITE_
 #include <string>
 #include <list>
+#include <iostream>
+#include <fstream>
 #include <stdarg.h>
+#include "BaseVisitor.h"
 using namespace std;
+class BaseVisitor;
 
-class CSTNode;
-extern CSTNode* g_root;
 extern const char* g_nodeTypeLabels[];
 typedef enum nodeType{
 	COMPILEUNIT, STATEMENTS, STATEMENT, EXPRESSION_NUMBER, EXPRESSION_ADDITION
@@ -19,7 +21,12 @@ public:
 
 	//  ********* QUERY METHODS **************
 	NodeType GetNodeType();
-	string GetGraphVizLabel();	
+	string GetGraphVizLabel();
+
+	// ********* Syntax Tree Traversals/Passes ************
+	virtual void PrintTree(ofstream *outfile,CSTNode *current,CSTNode *parent);
+
+	virtual Y Accept(BaseVisitor *visitor) = 0;
 
 private:
 	// Type of node
@@ -30,15 +37,10 @@ private:
 	// A counter counting the nodes created for giving a
 	// unique serial counter
 	static int ms_serialCounter;
-	list<CSTNode *> *m_children;
+	list<CSTNode *> *m_children;	
 };
 
-
-
-
-
-
-
+extern CSTNode* g_root;
 
 
 #endif
