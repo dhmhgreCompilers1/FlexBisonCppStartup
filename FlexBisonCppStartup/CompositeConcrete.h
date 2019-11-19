@@ -16,7 +16,7 @@ public:
 	virtual ~CCompileUnit();
 
 	void PrintTree(ofstream* outfile, CSTNode* current, CSTNode* parent) override;
-	virtual Y Accept(BaseVisitor* visitor);
+	Y Accept(BaseVisitor* visitor);
 private:	
 };
 
@@ -27,7 +27,7 @@ public:
 	CStatements(CStatements* stats, CStatement* stat);
 	virtual ~CStatements();
 	void PrintTree(ofstream* outfile, CSTNode* current, CSTNode* parent) override;
-	virtual Y Accept(BaseVisitor* visitor) override;
+	Y Accept(BaseVisitor* visitor) override;
 private:
 };
 
@@ -38,7 +38,7 @@ public:
 	CStatement(CExpression* expr);	
 	virtual ~CStatement();
 	void PrintTree(ofstream* outfile, CSTNode* current, CSTNode* parent) override;
-	virtual Y Accept(BaseVisitor* visitor) override;
+	Y Accept(BaseVisitor* visitor) override;
 private:
 };
 
@@ -49,7 +49,7 @@ public:
 	CExpression(CExpression* exprl,CExpression*exprr);
 	virtual ~CExpression();
 	void PrintTree(ofstream* outfile, CSTNode* current, CSTNode* parent) override;
-	virtual Y Accept(BaseVisitor* visitor) override;
+	Y Accept(BaseVisitor* visitor) override;
 private:
 };
 
@@ -63,7 +63,7 @@ public :
 	CNUMBER(char* text, double val);
 	virtual ~CNUMBER();
 	void PrintTree(ofstream* outfile, CSTNode* current, CSTNode* parent) override;
-	virtual Y Accept(BaseVisitor* visitor) override;
+	Y Accept(BaseVisitor* visitor) override;
 };
 
 

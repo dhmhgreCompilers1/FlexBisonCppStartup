@@ -49,7 +49,7 @@ namespace yy{
 	}
 }
 
-void main(int argc, char **argv){
+int main(int argc, char **argv){
 	ofstream *outFile = new ofstream();
 	fopen_s(&yyin,"test.txt","r");
 	yy::parser *p = new yy::parser();
@@ -57,5 +57,5 @@ void main(int argc, char **argv){
 	
 
 	cout <<"Finished!!!";
-
+	return 0;
 }

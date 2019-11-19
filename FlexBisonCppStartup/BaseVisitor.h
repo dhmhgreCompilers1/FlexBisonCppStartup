@@ -21,7 +21,7 @@ public:
 	}	
 };
 
-typedef struct Result<int *> Y;
+typedef class Result<int *> Y;
 
 
 class BaseVisitor {
