@@ -16,8 +16,6 @@ public:
 
 	CCompileUnit(CStatements* stats);
 	virtual ~CCompileUnit();
-
-	virtual void PrintSyntaxTree(CSTNode* node) override;
 private:	
 };
 
@@ -27,8 +25,6 @@ public:
 	CStatements(CStatement* stat);
 	CStatements(CStatements* stats, CStatement* stat);
 	virtual ~CStatements();
-
-	virtual void PrintSyntaxTree(CSTNode* node) override;
 private:
 };
 
@@ -38,8 +34,6 @@ public:
 	CStatement();
 	CStatement(CExpression* expr);	
 	virtual ~CStatement();
-
-	virtual void PrintSyntaxTree(CSTNode* node) override;
 private:
 };
 
@@ -49,8 +43,6 @@ public:
 	CExpression(CNUMBER *num);
 	CExpression(CExpression* exprl,CExpression*exprr);
 	virtual ~CExpression();
-
-	virtual void PrintSyntaxTree(CSTNode* node) override;
 private:
 };
 
@@ -63,8 +55,6 @@ public :
 	CNUMBER(char *text,int val);
 	CNUMBER(char* text, double val);
 	virtual ~CNUMBER();
-
-	virtual void PrintSyntaxTree(CSTNode* node) override;
 };
 
 

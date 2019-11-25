@@ -38,4 +38,3 @@ string CSTNode::GetGraphVizLabel() {
 }
 
 
-void CSTNode::PrintSyntaxTree(CSTNode* node) {}
