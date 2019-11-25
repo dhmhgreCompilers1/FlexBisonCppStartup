@@ -19,7 +19,9 @@ public:
 
 	//  ********* QUERY METHODS **************
 	NodeType GetNodeType();
-	string GetGraphVizLabel();	
+	string GetGraphVizLabel();
+
+	virtual void PrintSyntaxTree(CSTNode* node);
 
 private:
 	// Type of node
