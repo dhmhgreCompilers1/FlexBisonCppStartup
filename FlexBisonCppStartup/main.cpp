@@ -21,4 +21,6 @@ void main(int argc, char** argv) {
 	(*dotfile) << "}";
 	dotfile->close();
 
+	system("dot -Tgif ST.dot -o ST.gif");
+
 }
