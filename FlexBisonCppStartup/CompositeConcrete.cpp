@@ -29,3 +29,29 @@ CNUMBER::CNUMBER(char* text, double val) : CSTNode(EXPRESSION_NUMBER, 0) {
 	m_value.d = val;	
 }
 CNUMBER::~CNUMBER() {}
+
+void CCompileUnit::PrintSyntaxTree() {
+	
+	// Call base class method to do the visit
+	CSTNode::PrintSyntaxTree();
+}
+void CStatements::PrintSyntaxTree() {
+	
+	// Call base class method to do the visit
+	CSTNode::PrintSyntaxTree();
+}
+void CStatement::PrintSyntaxTree() {
+	
+	// Call base class method to do the visit
+	CSTNode::PrintSyntaxTree();
+}
+void CExpression::PrintSyntaxTree() {
+	
+	// Call base class method to do the visit
+	CSTNode::PrintSyntaxTree();
+}
+void CNUMBER::PrintSyntaxTree() {
+	
+	// Call base class method to do the visit
+	CSTNode::PrintSyntaxTree();
+}

@@ -27,7 +27,7 @@ public:
 	// ********** MODIFIER METHODS ***********
 	void SetParent(CSTNode* parent) { m_parent = parent; }
 
-private:
+protected:
 	// Type of node
 	NodeType m_nodeType;
 	// A label that will be used to render the node in graphviz
