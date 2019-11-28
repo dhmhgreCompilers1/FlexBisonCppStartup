@@ -156,6 +156,7 @@
     <ClCompile Include="CompositeConcrete.cpp" />
     <ClCompile Include="first.flex.cpp" />
     <ClCompile Include="first.tab.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Composite.h" />
