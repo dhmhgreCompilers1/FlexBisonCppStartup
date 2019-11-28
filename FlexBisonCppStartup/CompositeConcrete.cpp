@@ -5,7 +5,7 @@ CCompileUnit::CCompileUnit(CStatements *stats):CSTNode(COMPILEUNIT,1,stats){
 CCompileUnit::~CCompileUnit() {
 }
 
-CStatements::CStatements(CStatement* stat) :CSTNode(STATEMENTS,2,stat){}
+CStatements::CStatements(CStatement* stat) :CSTNode(STATEMENTS,1,stat){}
 
 CStatements::CStatements(CStatements *stats, CStatement *stat) :CSTNode(STATEMENTS,2,stats,stat) {	
 }

@@ -1,5 +1,6 @@
 #ifndef COMPOSITE_
 #define COMPOSITE_
+#include <iostream>
 #include <string>
 #include <list>
 #include <stdarg.h>
@@ -20,6 +21,7 @@ public:
 	//  ********* QUERY METHODS **************
 	NodeType GetNodeType();
 	string GetGraphVizLabel();
+	virtual void PrintSyntaxTree();
 
 
 	// ********** MODIFIER METHODS ***********

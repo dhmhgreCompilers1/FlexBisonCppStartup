@@ -40,4 +40,10 @@ string CSTNode::GetGraphVizLabel() {
 	return m_graphvizLabel;
 }
 
-
+void CSTNode::PrintSyntaxTree() {
+	list<CSTNode*>::iterator it;
+	cout << "Visiting node " << m_graphvizLabel << std::endl;
+	for ( it = m_children->begin(); it !=m_children->end(); it++) {
+		(*it)->PrintSyntaxTree();
+	}
+}

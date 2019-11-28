@@ -1016,5 +1016,6 @@ void main(int argc, char **argv){
 	p->parse();
 	root = g_root;
 	cout <<"Finished!!!";
+	root->PrintSyntaxTree();
 
 }
