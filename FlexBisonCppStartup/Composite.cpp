@@ -7,6 +7,7 @@ const char* g_nodeTypeLabels[] = { "COMPILEUNIT","STATEMENTS", "STATEMENT", "EXP
 
 CSTNode::CSTNode(NodeType type, int num, ...) :m_nodeType{ type } {
 	va_list argumentList;
+	CSTNode* child;
 
 	va_start(argumentList, num);
 
@@ -15,7 +16,9 @@ CSTNode::CSTNode(NodeType type, int num, ...) :m_nodeType{ type } {
 	m_children = new list<CSTNode*>();
 
 	for (int i = 0; i < num; i++) {
-		m_children->push_back(va_arg(argumentList, CSTNode*));
+		child = va_arg(argumentList, CSTNode*);		
+		m_children->push_back(child);
+		child->SetParent(this);
 	}
 
 	va_end(argumentList);

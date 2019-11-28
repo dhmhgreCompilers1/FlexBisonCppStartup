@@ -19,7 +19,11 @@ public:
 
 	//  ********* QUERY METHODS **************
 	NodeType GetNodeType();
-	string GetGraphVizLabel();	
+	string GetGraphVizLabel();
+
+
+	// ********** MODIFIER METHODS ***********
+	void SetParent(CSTNode* parent) { m_parent = parent; }
 
 private:
 	// Type of node
@@ -31,6 +35,7 @@ private:
 	// unique serial counter
 	static int ms_serialCounter;
 	list<CSTNode *> *m_children;
+	CSTNode* m_parent;
 };
 
 
