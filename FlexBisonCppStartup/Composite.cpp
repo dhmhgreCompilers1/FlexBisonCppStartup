@@ -37,13 +37,13 @@ NodeType CSTNode::GetNodeType() {
 
 }
 string CSTNode::GetGraphVizLabel() {
-	return m_graphvizLabel;
+	return m_graphvizLabel + "_" + to_string(m_serial);
 }
 
-void CSTNode::PrintSyntaxTree() {
+void CSTNode::PrintSyntaxTree(ofstream *dotfile) {
 	list<CSTNode*>::iterator it;
 	cout << "Visiting node " << m_graphvizLabel << std::endl;
 	for ( it = m_children->begin(); it !=m_children->end(); it++) {
-		(*it)->PrintSyntaxTree();
+		(*it)->PrintSyntaxTree(dotfile);
 	}
 }

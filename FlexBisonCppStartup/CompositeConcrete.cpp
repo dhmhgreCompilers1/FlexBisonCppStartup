@@ -30,28 +30,34 @@ CNUMBER::CNUMBER(char* text, double val) : CSTNode(EXPRESSION_NUMBER, 0) {
 }
 CNUMBER::~CNUMBER() {}
 
-void CCompileUnit::PrintSyntaxTree() {
-	
+void CCompileUnit::PrintSyntaxTree(ofstream* dotfile) {
+	if (m_parent != nullptr) {
+		(*dotfile) << "\"" << m_parent->GetGraphVizLabel() << "\"->\"" << GetGraphVizLabel() << "\";\n";
+	}
 	// Call base class method to do the visit
-	CSTNode::PrintSyntaxTree();
+	CSTNode::PrintSyntaxTree(dotfile);
 }
-void CStatements::PrintSyntaxTree() {
-	
+void CStatements::PrintSyntaxTree(ofstream* dotfile) {
+
+	(*dotfile) << "\"" << m_parent->GetGraphVizLabel() << "\"->\"" << GetGraphVizLabel() << "\";\n";
 	// Call base class method to do the visit
-	CSTNode::PrintSyntaxTree();
+	CSTNode::PrintSyntaxTree(dotfile);
 }
-void CStatement::PrintSyntaxTree() {
-	
+void CStatement::PrintSyntaxTree(ofstream* dotfile) {
+
+	(*dotfile) << "\"" << m_parent->GetGraphVizLabel() << "\"->\"" << GetGraphVizLabel() << "\";\n";
 	// Call base class method to do the visit
-	CSTNode::PrintSyntaxTree();
+	CSTNode::PrintSyntaxTree(dotfile);
 }
-void CExpression::PrintSyntaxTree() {
-	
+void CExpression::PrintSyntaxTree(ofstream* dotfile) {
+
+	(*dotfile) << "\"" << m_parent->GetGraphVizLabel() << "\"->\"" << GetGraphVizLabel() << "\";\n";
 	// Call base class method to do the visit
-	CSTNode::PrintSyntaxTree();
+	CSTNode::PrintSyntaxTree(dotfile);
 }
-void CNUMBER::PrintSyntaxTree() {
-	
+void CNUMBER::PrintSyntaxTree(ofstream* dotfile) {
+
+	(*dotfile) << "\"" << m_parent->GetGraphVizLabel() << "\"->\"" << GetGraphVizLabel() << "\";\n";
 	// Call base class method to do the visit
-	CSTNode::PrintSyntaxTree();
+	CSTNode::PrintSyntaxTree(dotfile);
 }
